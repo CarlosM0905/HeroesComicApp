@@ -1,0 +1,35 @@
+<nz-header>
+  <div class="logo">
+    <img src="assets/img/A-64.png" width="30" height="30" alt="" loading="lazy">
+  </div>
+  <ul nz-menu nzTheme="dark" nzMode="horizontal">
+    <!-- nzSelected -->
+    <li nz-menu-item routerLinkActive="active animated fadeIn">
+      <a [routerLink]="['home']" style="display: flex; align-items: center;">
+        <i nz-icon nzType="home" nzTheme="outline"></i>
+        Home
+      </a>
+    </li>
+    <li nz-menu-item routerLinkActive="active animated fadeIn">
+      <a [routerLink]="['heroes']" style="display: flex; align-items: center;">
+        <i nz-icon nzType="user" nzTheme="outline"></i>
+        Heroes
+      </a>
+    </li>
+    <li nz-menu-item routerLinkActive="active animated fadeIn">
+      <a [routerLink]="['about']" style="display: flex; align-items: center;">
+        <i nz-icon nzType="bars" nzTheme="outline"></i>
+        About
+      </a>
+    </li>
+  </ul>
+
+  <div class="search">
+    <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+      <input #buscarTexto type="text" nz-input placeholder="Buscar un heroe" (keyup.enter)="buscarHeroe(buscarTexto.value)"/>
+    </nz-input-group>
+    <ng-template #suffixIconButton>
+      <button nz-button nzType="primary" nzSearch (click)="buscarHeroe(buscarTexto.value)"><i nz-icon nzType="search"></i></button>
+    </ng-template>
+  </div>
+</nz-header>
