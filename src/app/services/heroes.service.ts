@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class HeroesService {
 
@@ -55,13 +55,16 @@ export class HeroesService {
         }
     ];
 
-    constructor() {
+    constructor(private http: HttpClient) {
         console.log('Servicio listo para usar');
     }
 
     getHeroes(): Heroe[] {
+
         return this.heroes;
     }
+
+
 
     getHeroe(idx: number): Heroe {
         return this.heroes[idx];

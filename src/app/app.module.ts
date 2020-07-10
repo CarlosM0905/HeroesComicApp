@@ -27,11 +27,16 @@ import * as AllIcons from '@ant-design/icons-angular/icons';
 
 // NgZorro components
 import {NgZorroModule} from './ng-zorro/ng-zorro.module';
+
+// Components
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -56,7 +61,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzIconModule,
     NgZorroModule,
     BrowserAnimationsModule,
-    AppRouting
+    AppRouting,
+    HttpClientModule
   ],
   providers: [ 
     { provide: NZ_I18N, useValue: en_US },

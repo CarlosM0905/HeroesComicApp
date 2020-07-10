@@ -12,6 +12,7 @@ export class BuscadorComponent implements OnInit {
 
   heroes: Heroe[];
   termino: string;
+  visible = false;
 
   constructor(private _activatedRoute: ActivatedRoute,
               private router: Router,
@@ -28,4 +29,13 @@ export class BuscadorComponent implements OnInit {
     this.router.navigate(['/heroe', id]);
   }
 
+
+
+  open(): void {
+    this.visible = true;
+  }
+
+  close(): void {
+    this.visible = false;
+  }
 }
