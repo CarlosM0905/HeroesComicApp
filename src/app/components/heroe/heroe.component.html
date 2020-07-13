@@ -3,15 +3,16 @@
 
 <div class="row animated fadeIn">
     <div class="col-md-4">
-        <img [src]="heroe.img" class="img-fluid" [alt]="heroe.nombre">
+        
         <br><br>
         <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">Regresar</a>
     </div>
     <div class="col-md-8">
         <h3>{{heroe.nombre}}</h3>
         <hr>
+        <div>Heroe 202</div>
         <p>
-            {{heroe.bio}}
+            Heroe1
         </p>
         <div *ngIf="heroe.casa === 'Marvel'; else dc">
             <img class="img-logo" src="assets/img/marvel.png" [alt]="heroe.casa">
