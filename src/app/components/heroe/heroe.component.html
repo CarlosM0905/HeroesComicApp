@@ -5,7 +5,28 @@
     <div class="col-md-4">
         
         <br><br>
-        <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">Regresar</a>
+        <a [routerLink]="['/heroes']" class="btn btn-outline-info btn-block">Regresar</a>
+    </div>
+    <div class="col-md-8">
+        <h3>{{heroe.nombre}}</h3>
+        <hr>
+        <div>Heroe 202</div>
+        <p>
+            Heroe1 basico
+        </p>
+        <div *ngIf="heroe.casa === 'Marvel'; else dc">
+            <img class="img-logo" src="assets/img/marvel.png" [alt]="heroe.casa">
+        </div>
+        <ng-template #dc>
+            <img class="img-logo" src="assets/img/dc.png" [alt]="heroe.casa">
+        </ng-template>
+    </div>
+</div>
+<div class="row animated fadeIn">
+    <div class="col-md-4">
+        
+        <br><br>
+        <a [routerLink]="['/heroes']" class="btn btn-outline-info btn-block">Regresar</a>
     </div>
     <div class="col-md-8">
         <h3>{{heroe.nombre}}</h3>
